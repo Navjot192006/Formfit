@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FormFit | AI Fitness Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <div class="barbell">
+
+                <!-- LEFT END: tip + plates -->
+                <div class="bb-end bb-end-left" aria-hidden="true">
+                    <span class="bb-tip"></span>
+                    <span class="bb-plate bb-plate-teal"></span>
+                    <span class="bb-plate bb-plate-red"></span>
+                </div>
+
+                <!-- THE BAR -->
+                <div class="bb-bar">
+
+                    <span class="bb-grip" aria-hidden="true"></span>
+
+                    <a href="index.html" class="brand" aria-label="FormFit home">
+                        <strong>FormFit</strong>
+                    </a>
+
+                    <span class="bb-grip" aria-hidden="true"></span>
+
+                    <div class="nav-links">
+                        <a href="#analyzer">Analyzer</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="history.html">History</a>
+                    </div>
+
+                    <span class="bb-grip" aria-hidden="true"></span>
+
+                    <a href="#analyzer" class="nav-cta">
+                        <span class="nav-cta-text">Analyze Form</span>
+                        <span class="nav-cta-arrow">→</span>
+                    </a>
+
+                    <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu"
+                        aria-expanded="false" aria-controls="mobileNav">
+                        <span></span><span></span><span></span>
+                    </button>
+
+                    <span class="bb-grip" aria-hidden="true"></span>
+
+                </div>
+
+                <!-- RIGHT END: bar → plates → tip (row-reverse in CSS) -->
+                <div class="bb-end bb-end-right" aria-hidden="true">
+                    <span class="bb-tip"></span>
+                    <span class="bb-plate bb-plate-teal"></span>
+                    <span class="bb-plate bb-plate-red"></span>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- keep your existing mobile nav exactly as it is -->
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true" inert>
+            <div class="mobile-nav-inner">
+                <div class="mobile-nav-links">
+                    <a href="#analyzer"><span>Analyzer</span><span>→</span></a>
+                    <a href="#how-it-works"><span>How It Works</span><span>→</span></a>
+                    <a href="history.html"><span>History</span><span>→</span></a>
+                </div>
+                <a href="#analyzer" class="mobile-nav-cta">Analyze Form <span>→</span></a>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    AI FITNESS INTELLIGENCE
+                </p>
+
+                <h1>
+                    Your Form Has a Story.
+                    <em>AI Can Read It.</em>
+                </h1>
+
+                <p class="hero-description">
+                    Upload your exercise video and let FormFit
+                    analyze your movement, repetitions, range of
+                    motion, stability, posture, and tempo.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#analyzer" class="button button-primary">
+                        Analyze My Form
+                        <span>→</span>
+                    </a>
+
+                    <a href="#how-it-works" class="button button-secondary">
+                        See How It Works
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="hero-athlete">
+
+                    <div class="athlete-placeholder">
+                        <img src="assets/hero-athlete.png" alt="Athlete performing a squat" class="hero-athlete-image">
+                    </div>
+
+                    <!-- Pose-analysis overlay -->
+                    <svg class="pose-skeleton" aria-hidden="true">
+
+                        <!-- bones -->
+                        <line pathLength="1" x1="52.9%" y1="42.4%" x2="78.4%" y2="56.3%" /> <!-- shoulder → elbow -->
+                        <line pathLength="1" x1="52.9%" y1="42.4%" x2="39.5%" y2="68.1%" /> <!-- shoulder → hip -->
+                        <line pathLength="1" x1="39.5%" y1="68.1%" x2="69.5%" y2="70.3%" /> <!-- hip → knee -->
+                        <line pathLength="1" x1="69.5%" y1="70.3%" x2="52.9%" y2="88.3%" /> <!-- knee → ankle -->
+
+                        <!-- landmarks -->
+                        <g class="lm">
+                            <circle class="halo" cx="52.9%" cy="42.4%" r="15" />
+                            <circle class="dot" cx="52.9%" cy="42.4%" r="6.5" />
+                        </g>
+                        <g class="lm">
+                            <circle class="halo" cx="78.4%" cy="56.3%" r="15" />
+                            <circle class="dot" cx="78.4%" cy="56.3%" r="6.5" />
+                        </g>
+                        <g class="lm">
+                            <circle class="halo" cx="39.5%" cy="68.1%" r="15" />
+                            <circle class="dot" cx="39.5%" cy="68.1%" r="6.5" />
+                        </g>
+                        <g class="lm lm-key">
+                            <circle class="halo" cx="69.5%" cy="70.3%" r="15" />
+                            <circle class="dot" cx="69.5%" cy="70.3%" r="6.5" />
+                        </g>
+                        <g class="lm">
+                            <circle class="halo" cx="52.9%" cy="88.3%" r="15" />
+                            <circle class="dot" cx="52.9%" cy="88.3%" r="6.5" />
+                        </g>
+
+                    </svg>
+
+                </div>
+
+
+                <!-- Floating AI cards -->
+
+                <div class="floating-card score-card">
+
+                    <span class="floating-label">
+                        FORM SCORE
+                    </span>
+
+                    <strong id="heroFormScore">96</strong>
+
+                    <span class="score-good">
+                        Excellent
+                    </span>
+
+                </div>
+
+
+                <div class="floating-card hero-angle-card">
+
+                    <span>Knee Angle</span>
+                    <strong id="heroKneeAngle">82°</strong>
+
+                </div>
+
+
+                <div class="floating-card feedback-card">
+
+                    <span class="floating-label">
+                        AI COACH
+                    </span>
+
+                    <p>
+                        Great depth. Keep your chest
+                        slightly more upright.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ANALYZER
+        ====================================================== -->
+
+        <section id="analyzer" class="analyzer-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        AI MOVEMENT ANALYSIS
+                    </p>
+
+                    <h2>
+                        See Your Movement
+                        <em>Through AI.</em>
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Choose an exercise, upload your video,
+                    and let FormFit understand your movement.
+                </p>
+
+            </div>
+
+
+            <section class="exercise-selector">
+
+                <div class="selector-heading">
+                    <div class="selector-eyebrow">
+                        <span>01</span><span>/</span><strong>EXERCISE SELECTION</strong>
+                    </div>
+
+                    <div class="selector-title-row">
+                        <h2>
+                            Choose Your Movement
+                            <br>
+                            <em>Let FormFit Analyze It.</em>
+                        </h2>
+
+                        <div class="selector-intro">
+                            <p>
+                                Select an exercise, upload your video, and get detailed AI
+                                analysis of your form, angles and movement patterns.
+                            </p>
+
+                            <div class="selector-features">
+                                <span>
+                                    <i class="feature-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <rect x="2" y="6" width="14" height="12" rx="2" />
+                                            <path d="m16 10.5 5-3v9l-5-3" />
+                                        </svg>
+                                    </i>
+                                    <em>Upload<br>Your Video</em>
+                                </span>
+                                <span>
+                                    <i class="feature-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 3a4 4 0 0 0-4 4 4 4 0 0 0-3 6 4 4 0 0 0 3 6 4 4 0 0 0 8 0 4 4 0 0 0 3-6 4 4 0 0 0-3-6 4 4 0 0 0-4-4z" />
+                                            <path d="M12 3v18" />
+                                        </svg>
+                                    </i>
+                                    <em>AI Form<br>Analysis</em>
+                                </span>
+                                <span>
+                                    <i class="feature-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M5 20V12M12 20V4M19 20v-9" />
+                                        </svg>
+                                    </i>
+                                    <em>Detailed<br>Feedback</em>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="exercise-grid" role="group" aria-label="Choose an exercise to analyze">
+
+                    <!-- SQUAT -->
+                    <button type="button" class="exercise-card squat-card is-selected" data-exercise="squat"
+                        aria-pressed="true">
+
+                        <div class="exercise-bg"></div>
+
+                        <img class="exercise-athlete" src="assets/squat-athlete.png" alt="Squat exercise">
+
+                        <div class="exercise-card-top">
+                            <span class="exercise-status"><span></span>ACTIVE</span>
+                            <span class="exercise-number">01</span>
+                        </div>
+
+                        <div class="exercise-content">
+                            <h3>Squat</h3>
+                            <span class="exercise-category">Lower Body</span>
+
+                            <p class="exercise-description">
+                                Analyze your squat depth, knee alignment,
+                                hip movement and overall form.
+                            </p>
+
+                            <div class="analysis-features">
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14" />
+                                    </svg>
+                                    Depth<br>Analysis
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="5" r="2" />
+                                        <path d="m9 21 2-7-3-3 3-3 3 2 3 1M11 14l4 2 1 5" />
+                                    </svg>
+                                    Knee<br>Alignment
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 3c-2 4-2 8 0 12M16 3c2 4 2 8 0 12M8 15l-2 6M16 15l2 6M9 11h6" />
+                                    </svg>
+                                    Hip &amp; Torso<br>Movement
+                                </span>
+                            </div>
+
+                            <div class="exercise-action">
+                                <span>Analyze Squat</span>
+                                <span class="exercise-arrow">→</span>
+                            </div>
+                        </div>
+                    </button>
+
+
+                    <!-- BICEP CURL -->
+                    <button type="button" class="exercise-card curl-card" data-exercise="bicep-curl"
+                        aria-pressed="false">
+
+                        <div class="exercise-bg"></div>
+
+                        <img class="exercise-athlete" src="assets/bicep-curl-athlete.png" alt="Bicep curl exercise">
+
+                        <div class="exercise-card-top">
+                            <span class="exercise-status"><span></span>ACTIVE</span>
+                            <span class="exercise-number">02</span>
+                        </div>
+
+                        <div class="exercise-content">
+                            <h3>Bicep Curl</h3>
+                            <span class="exercise-category">Upper Body</span>
+
+                            <p class="exercise-description">
+                                Analyze your elbow position, range of motion,
+                                curl depth and rep consistency.
+                            </p>
+
+                            <div class="analysis-features">
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M6 20c0-6 2-9 6-10l2-6M12 10l6 2" />
+                                    </svg>
+                                    Elbow<br>Position
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 12a8 8 0 1 1-3-6.2M20 4v4h-4" />
+                                    </svg>
+                                    Range of<br>Motion
+                                </span>
+                                <span>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12" />
+                                    </svg>
+                                    Rep<br>Consistency
+                                </span>
+                            </div>
+
+                            <div class="exercise-action">
+                                <span>Analyze Bicep Curl</span>
+                                <span class="exercise-arrow">→</span>
+                            </div>
+                        </div>
+                    </button>
+
+                </div>
+
+
+                <!-- MORE EXERCISES -->
+                <div class="more-exercises">
+
+                    <div class="more-exercises-heading">
+                        <h3>More Exercises</h3>
+                        <p>We are constantly adding new exercises. Stay tuned!</p>
+                    </div>
+
+                    <div class="coming-soon-grid">
+
+                        <div class="coming-soon-card">
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            <div class="coming-soon-text">
+                                <h4>Push-Up</h4>
+                                <span class="coming-soon-category">Upper Body</span>
+                            </div>
+                            <img src="assets/pushup-athlete.png" alt="">
+                            <b class="coming-soon-arrow">→</b>
+                        </div>
+
+                        <div class="coming-soon-card">
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            <div class="coming-soon-text">
+                                <h4>Lunge</h4>
+                                <span class="coming-soon-category">Lower Body</span>
+                            </div>
+                            <img src="assets/lunge-athlete.png" alt="">
+                            <b class="coming-soon-arrow">→</b>
+                        </div>
+
+                        <div class="coming-soon-card">
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            <div class="coming-soon-text">
+                                <h4>Deadlift</h4>
+                                <span class="coming-soon-category">Lower Body</span>
+                            </div>
+                            <img src="assets/deadlift-athlete.png" alt="">
+                            <b class="coming-soon-arrow">→</b>
+                        </div>
+
+                        <div class="coming-soon-card">
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            <div class="coming-soon-text">
+                                <h4>Shoulder Press</h4>
+                                <span class="coming-soon-category">Upper Body</span>
+                            </div>
+                            <img src="assets/shoulder-press-athlete.png" alt="">
+                            <b class="coming-soon-arrow">→</b>
+                        </div>
+
+                        <div class="coming-soon-card">
+                            <span class="coming-soon-badge">Coming Soon</span>
+                            <div class="coming-soon-text">
+                                <h4>Plank</h4>
+                                <span class="coming-soon-category">Core</span>
+                            </div>
+                            <img src="assets/plank-athlete.png" alt="">
+                            <b class="coming-soon-arrow">→</b>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- UPLOAD WORKSPACE -->
+
+            <div class="analyzer-workspace" id="analyzerWorkspace" data-state="idle">
+
+                <!-- REQUIRED BY EXISTING SCRIPT (kept outside the dropzone on purpose) -->
+                <input type="file" id="videoInput" accept="video/*" hidden>
+
+                <!-- ================= HEADER ================= -->
+
+                <div class="ws-head">
+
+                    <div>
+                        <p class="ws-eyebrow"><span id="wsStep">02</span> / <b id="wsEyebrow">Video upload</b></p>
+
+                        <h3 class="ws-title" id="wsTitle">Show us your <em>movement.</em></h3>
+
+                        <p class="ws-sub" id="wsSub">
+                            Record from a clear side view for the most reliable analysis.
+                        </p>
+                    </div>
+
+                    <div class="ws-chip-row">
+                        <span id="selectedExerciseLabel" class="selected-exercise-label">
+                            Squat selected
+                        </span>
+                        <a href="#analyzer" class="ws-change">Change</a>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= STATE 1: BEFORE UPLOAD ================= -->
+
+                <div class="ws-upload">
+
+                    <div class="ws-drop" id="uploadArea" role="button" tabindex="0"
+                        aria-label="Choose a workout video to upload">
+
+                        <div class="ws-drop-icon" aria-hidden="true">↑</div>
+
+                        <h4>Drop your workout video here</h4>
+
+                        <p>or click to choose a video from your device</p>
+
+                        <span class="button button-primary ws-drop-btn">Choose video</span>
+
+                        <div class="ws-formats">
+                            <span>MP4 / WebM</span>
+                            <span>·</span>
+                            <span>Side view recommended</span>
+                        </div>
+
+                        <p class="ws-drop-error" id="dropError" role="alert" hidden></p>
+
+                    </div>
+
+                    <aside class="ws-guide">
+
+                        <span class="ws-label">How to film</span>
+
+                        <ol class="ws-guide-list">
+                            <li>
+                                Film from the side
+                                <span>Camera at 90° to your movement, not front or back.</span>
+                            </li>
+                            <li>
+                                Keep your whole body in frame
+                                <span>Head to feet visible for the entire set.</span>
+                            </li>
+                            <li>
+                                Camera at hip height
+                                <span>About 2–3 m away, phone held still.</span>
+                            </li>
+                            <li>
+                                Good lighting
+                                <span>Plain background, no strong backlight.</span>
+                            </li>
+                        </ol>
+
+                        <p class="ws-privacy">
+                            Your video is analyzed in your browser and isn't uploaded.
+                        </p>
+
+                    </aside>
+
+                </div>
+
+
+                <!-- ================= STATE 2: AFTER UPLOAD ================= -->
+
+                <div class="ws-filebar">
+
+                    <div class="ws-file">
+                        <span class="ws-file-icon" aria-hidden="true">▶</span>
+
+                        <div class="ws-file-text">
+                            <strong id="fileName">video.mp4</strong>
+                            <span id="fileMeta">—</span>
+                        </div>
+                    </div>
+
+                    <div class="ws-file-actions">
+                        <button type="button" class="ws-link-btn" id="replaceVideoBtn">Replace</button>
+                        <button type="button" class="ws-link-btn" id="removeVideoBtn">Remove</button>
+                    </div>
+
+                </div>
+
+
+                <div class="ws-analysis">
+
+                    <!-- ---------- LEFT: VIDEO ---------- -->
+
+                    <div class="ws-video-card">
+
+                        <div class="ws-video-head">
+
+                            <div aria-live="polite">
+                                <span class="status-dot"></span>
+                                <span id="analysisStatus">Ready for analysis</span>
+                            </div>
+
+                            <span id="currentExerciseLabel" class="current-exercise">Squat</span>
+
+                        </div>
+
+                        <!-- .video-stage is required by the script (canvas alignment) -->
+                        <div class="video-stage">
+
+                            <!-- REQUIRED BY EXISTING SCRIPT -->
+                            <video id="video" controls playsinline></video>
+
+                            <!-- REQUIRED BY EXISTING SCRIPT -->
+                            <canvas id="canvas"></canvas>
+
+                            <div id="processingOverlay" class="processing-overlay" aria-hidden="true">
+                                <span class="ws-scan-dot"></span>
+                                <span id="processingStage">Tracking movement</span>
+                            </div>
+
+                        </div>
+
+                        <div class="ws-progress" aria-hidden="true"><span></span></div>
+
+                    </div>
+
+
+                    <!-- ---------- RIGHT: RESULTS ---------- -->
+
+                    <div class="ws-results">
+
+                        <!-- ================= REPORT (scanning + results) ================= -->
+                        <div class="rs-report">
+
+                            <!-- Hero score -->
+                            <section class="rs-hero">
+
+                                <div class="rs-ring" id="scoreRing">
+                                    <svg viewBox="0 0 148 148" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="rsRingGrad" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0%" class="rs-stop-a" />
+                                                <stop offset="100%" class="rs-stop-b" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle class="rs-ring-track" cx="74" cy="74" r="64" />
+                                        <circle class="rs-ring-fill" cx="74" cy="74" r="64" stroke="url(#rsRingGrad)" />
+                                    </svg>
+                                    <div class="rs-ring-center">
+                                        <strong id="formScore">—</strong>
+                                        <span>out of 100</span>
+                                    </div>
+                                </div>
+
+                                <div class="rs-hero-text">
+                                    <span class="ws-label">Form score</span>
+                                    <h4 id="scoreVerdict">Measuring…</h4>
+                                    <p id="scoreSummary">Tracking every joint as the video plays.</p>
+                                    <div class="rs-hero-chips" id="heroChips"></div>
+                                </div>
+
+                            </section>
+
+                            <!-- Stats -->
+                            <div class="rs-stats">
+
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="rs-stat-icon">
+                                            <svg viewBox="0 0 24 24">
+                                                <path
+                                                    d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3" />
+                                            </svg>
+                                        </span>
+                                        <span class="ws-label">Reps</span>
+                                    </div>
+                                    <strong id="repCount">0</strong>
+                                    <div class="rs-dots" id="repDots"></div>
+                                </div>
+
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="rs-stat-icon">
+                                            <svg viewBox="0 0 24 24">
+                                                <path d="M3 21h18M3 21L16 5" />
+                                                <path d="M9 21a6 6 0 00-1.8-4.3" />
+                                            </svg>
+                                        </span>
+                                        <span class="ws-label" id="rangeOfMotionLabel">Range of motion</span>
+                                    </div>
+                                    <strong id="rangeOfMotion">—</strong>
+                                    <small>average per rep</small>
+                                </div>
+
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="rs-stat-icon">
+                                            <svg viewBox="0 0 24 24">
+                                                <circle cx="12" cy="14" r="8" />
+                                                <path d="M12 14l3-3M9 2h6" />
+                                            </svg>
+                                        </span>
+                                        <span class="ws-label" id="tempoLabel">Tempo</span>
+                                    </div>
+                                    <strong id="tempo">—</strong>
+                                    <small>average per rep</small>
+                                </div>
+
+                            </div>
+
+                            <div class="rs-stats">
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="ws-label">Elbow stability</span>
+                                    </div>
+                                    <strong id="elbowStability">—</strong>
+                                    <small>average per rep</small>
+                                </div>
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="ws-label">Torso stability</span>
+                                    </div>
+                                    <strong id="torsoStability">—</strong>
+                                    <small>average per rep</small>
+                                </div>
+                                <div class="rs-stat">
+                                    <div class="rs-stat-top">
+                                        <span class="ws-label">Tracking confidence</span>
+                                    </div>
+                                    <strong id="analysisConfidence">—</strong>
+                                    <small>average per rep</small>
+                                </div>
+                            </div>
+
+                            <!-- Rep by rep -->
+                            <section class="rs-card rs-reps" aria-label="Rep by rep breakdown">
+
+                                <div class="rs-card-head">
+                                    <div>
+                                        <span class="ws-label">Rep by rep</span>
+                                        <h4>Full breakdown</h4>
+                                    </div>
+                                    <small>Select a rep to see every measurement</small>
+                                </div>
+
+                                <div class="rs-rep-list" id="repStrip" role="group" aria-label="Choose a repetition"></div>
+
+                                <div class="rs-detail" id="repDetail" aria-live="polite"></div>
+
+                            </section>
+
+                            <!-- Coach notes -->
+                            <section class="rs-card rs-insights" id="analysisFeedback" aria-live="polite">
+
+                                <div class="rs-card-head">
+                                    <div>
+                                        <span class="ws-label">AI coach</span>
+                                        <h4>Coach notes</h4>
+                                    </div>
+                                    <div class="rs-counts" id="insightCounts"></div>
+                                </div>
+
+                                <div class="rs-priority" id="priorityFix" hidden>
+                                    <span class="rs-priority-tag">Focus next</span>
+                                    <p id="priorityText"></p>
+                                </div>
+
+                                <div class="rs-skel" aria-hidden="true"><i></i><i></i><i></i></div>
+
+                                <div id="analysisFeedbackText" class="analysis-feedback-list"></div>
+                                <p class="rs-disclaimer">Computer-vision estimate for coaching only; not medical advice.</p>
+
+                            </section>
+
+                            <!-- Footer action -->
+                            <div class="rs-actions">
+                                <p id="saveStatus" role="status" aria-live="polite">After each analysis, press Save workout to add this session to History.</p>
+
+                                <div class="rs-actions-buttons">
+                                    <button type="button" class="button button-secondary" id="saveWorkoutBtn">
+                                        Save workout
+                                    </button>
+                                    <button type="button" class="button button-primary" id="analyzeAnotherBtn">
+                                        Analyze another video <span>→</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ================= ERROR ================= -->
+                        <div class="rs-error" role="alert">
+                            <div class="rs-error-icon">!</div>
+                            <h4>We couldn't read this video</h4>
+                            <p id="analysisErrorMessage">
+                                This can happen when the angle, framing or lighting isn't ideal,
+                                or if something went wrong during analysis. Try again with:
+                            </p>
+                            <ul id="analysisErrorChecklist">
+                                <li>a true side view</li>
+                                <li>your whole body in frame</li>
+                                <li>the phone held still</li>
+                            </ul>
+                            <button type="button" class="button button-primary" id="retryVideoBtn">
+                                Try another video <span>→</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =====================================================
+     WHAT FORMFIT UNDERSTANDS
+====================================================== -->
+
+            <section class="understands-section">
+
+                <!-- SECTION INTRO -->
+                <div class="understands-intro">
+
+                    <div class="understands-copy">
+
+                        <p class="eyebrow">MOVEMENT INTELLIGENCE</p>
+
+                        <h2>
+                            FormFit Looks
+                            <em>Beyond Reps.</em>
+                        </h2>
+
+                        <p class="understands-description">
+                            Every repetition contains information about how you move.
+                            FormFit turns that movement into understandable feedback.
+                        </p>
+
+                    </div>
+
+
+                    <!-- HERO VISUAL -->
+                    <div class="understands-hero" aria-hidden="true">
+
+                        <div class="understands-hero-blob"></div>
+                        <div class="understands-hero-arc"></div>
+
+                        <span class="understands-hero-dot dot-1"></span>
+                        <span class="understands-hero-dot dot-2"></span>
+                        <span class="understands-hero-dot dot-3"></span>
+
+                        <!-- Athlete + skeleton overlay -->
+                        <div class="understands-athlete">
+
+                            <img src="assets/hero-athlete.png" alt="">
+
+                            <svg class="understands-skeleton" viewBox="0 0 1300 1190" xmlns="http://www.w3.org/2000/svg"
+                                focusable="false">
+
+                                <!-- bones: hand > elbow > shoulder > hip > knee > ankle -->
+                                <polyline class="bone" points="1035,370 950,565 715,365 515,765 870,765 685,1050" />
+
+                                <!-- joints -->
+                                <circle class="joint" cx="715" cy="365" r="17" />
+                                <circle class="joint" cx="950" cy="565" r="17" />
+                                <circle class="joint" cx="1035" cy="370" r="17" />
+                                <circle class="joint" cx="515" cy="765" r="17" />
+                                <circle class="joint" cx="870" cy="765" r="17" />
+                                <circle class="joint" cx="685" cy="1050" r="17" />
+                            </svg>
+
+                        </div>
+
+                        <!-- Status card -->
+                        <div class="understands-hero-status">
+
+                            <div class="understands-status-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div>
+                                <strong>Analyzing</strong>
+                                <strong>Your Movement</strong>
+
+                                <div class="understands-status-dots">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYSIS CARDS -->
+                <div class="understanding-grid">
+
+                    <article class="understanding-card">
+                        <img src="assets/range-of-motion.png" alt="FormFit range of motion analysis">
+                    </article>
+
+                    <article class="understanding-card">
+                        <img src="assets/stability.png" alt="FormFit stability analysis">
+                    </article>
+
+                    <article class="understanding-card">
+                        <img src="assets/posture.png" alt="FormFit posture analysis">
+                    </article>
+
+                    <article class="understanding-card">
+                        <img src="assets/tempo.png" alt="FormFit tempo analysis">
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+     HOW IT WORKS
+====================================================== -->
+
+            <section id="how-it-works" class="how-section">
+
+                <div class="how-heading">
+
+                    <p class="eyebrow how-eyebrow">HOW IT WORKS</p>
+
+                    <h2>
+                        From Video to
+                        <em>Useful Feedback.</em>
+                    </h2>
+
+                    <p class="how-sub">
+                        Four simple steps from a single clip to coaching you can act on.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow">
+
+                    <!-- 01 -->
+                    <article class="workflow-step step-mint">
+                        <div class="workflow-top">
+                            <div class="workflow-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="4" y="4" width="16" height="16" rx="3" />
+                                    <path d="M8 9h8M8 13h5" />
+                                    <path d="m14.5 16.5 1.5 1.5 3-3.5" />
+                                </svg>
+                            </div>
+                            <span class="workflow-number">01</span>
+                        </div>
+
+                        <h3>Choose</h3>
+                        <p>Select the exercise you want FormFit to analyze.</p>
+                    </article>
+
+
+                    <!-- 02 -->
+                    <article class="workflow-step step-peach">
+                        <div class="workflow-top">
+                            <div class="workflow-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="6" width="12.5" height="12" rx="3" />
+                                    <path d="m15.5 10.5 5-2.5v8l-5-2.5" />
+                                </svg>
+                            </div>
+                            <span class="workflow-number">02</span>
+                        </div>
+
+                        <h3>Record</h3>
+                        <p>Upload a clear video showing your movement.</p>
+                    </article>
+
+
+                    <!-- 03 -->
+                    <article class="workflow-step step-blue">
+                        <div class="workflow-top">
+                            <div class="workflow-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="5.5" r="1.8" />
+                                    <path d="M12 8v5M12 13l-3 5M12 13l3 5M8 10.5l4-2.5 4 2.5" />
+                                    <path d="M3.5 8V4.5H7M20.5 8V4.5H17M3.5 16v3.5H7M20.5 16v3.5H17" />
+                                </svg>
+                            </div>
+                            <span class="workflow-number">03</span>
+                        </div>
+
+                        <h3>Analyze</h3>
+                        <p>AI tracks your pose and identifies your repetitions.</p>
+                    </article>
+
+
+                    <!-- 04 -->
+                    <article class="workflow-step step-peach">
+                        <div class="workflow-top">
+                            <div class="workflow-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 17.5 9.5 12l3.5 3.5L20 8.5" />
+                                    <path d="M15 8.5h5v5" />
+                                </svg>
+                            </div>
+                            <span class="workflow-number">04</span>
+                        </div>
+
+                        <h3>Improve</h3>
+                        <p>Receive form insights and actionable coaching feedback.</p>
+                    </article>
+
+                </div>
+
+            </section>
+            <!-- =====================================================
+     PROGRESS
+====================================================== -->
+
+            <section class="progress-section">
+
+                <div class="progress-content">
+
+                    <p class="eyebrow progress-eyebrow">YOUR PROGRESS</p>
+
+                    <h2>
+                        Your workouts should
+                        <em>teach you something.</em>
+                    </h2>
+
+                    <p class="progress-text">
+                        FormFit keeps your workout history so you can look back
+                        at your sessions and understand how your movement changes
+                        over time.
+                    </p>
+
+                    <a href="history.html" class="progress-button">
+                        <span class="progress-button-label">View Workout History</span>
+                        <span class="progress-button-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <!-- PREVIEW (sample data: replace with real values later) -->
+                <div class="progress-visual" aria-hidden="true">
+
+                    <div class="progress-pill">
+                        <i></i>
+                        Squat · Today
+                    </div>
+
+                    <!-- Form score card -->
+                    <div class="progress-card progress-card-main">
+
+                        <div class="progress-card-head">
+                            <span class="progress-label">FORM SCORE</span>
+                            <span class="progress-delta">+6% this week</span>
+                        </div>
+
+                        <div class="progress-score-row">
+
+                            <div class="progress-ring">
+                                <svg viewBox="0 0 128 128">
+                                    <circle class="ring-track" cx="64" cy="64" r="54" />
+                                    <circle class="ring-value" cx="64" cy="64" r="54" />
+                                </svg>
+                                <strong>94</strong>
+                            </div>
+
+                            <div class="progress-score-copy">
+                                <b>Current session</b>
+                                <small>Great depth and steady tempo</small>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-trend">
+
+                            <div class="progress-trend-head">
+                                <span>Last 7 sessions</span>
+                            </div>
+
+                            <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#2c5f55" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#2c5f55" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path class="trend-area"
+                                    d="M0 44 L33 38 L66 42 L100 26 L133 30 L166 16 L200 10 L200 60 L0 60 Z" />
+                                <polyline class="trend-line" points="0,44 33,38 66,42 100,26 133,30 166,16 200,10" />
+                            </svg>
+
+                            <span class="trend-dot"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Reps card -->
+                    <div class="progress-card progress-card-reps">
+
+                        <span class="progress-label">REPS</span>
+
+                        <strong>12</strong>
+
+                        <div class="rep-dots">
+                            <i></i><i></i><i></i><i></i><i></i><i></i>
+                            <i></i><i></i><i></i><i></i><i></i><i class="flag"></i>
+                        </div>
+
+                        <small>11 clean · 1 flagged</small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================================
+     FINAL CTA
+====================================================== -->
+
+            <section class="final-cta">
+
+                <div class="final-cta-inner">
+
+                    <p class="final-cta-eyebrow">READY WHEN YOU ARE</p>
+
+                    <h2>
+                        Train with more
+                        <em>awareness.</em>
+                    </h2>
+
+                    <p class="final-cta-text">
+                        Let AI turn your movement into information
+                        you can actually use.
+                    </p>
+
+                    <a href="#analyzer" class="final-cta-button">
+                        <span class="final-cta-button-label">Analyze My Form</span>
+                        <span class="final-cta-button-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
+                    </a>
+
+                    <p class="final-cta-note">Upload a clip and see how you move.</p>
+
+                </div>
+
+            </section>
+        </section>
+    </main>
+
+    <!-- =========================================================
+     FOOTER
+========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-panel">
+
+            <div class="footer-top">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+
+                    <a href="index.html" class="footer-logo" aria-label="FormFit home">
+                        <span class="footer-logo-mark">F</span>
+                        <span class="footer-logo-text">FormFit</span>
+                    </a>
+
+                    <p class="footer-tagline">
+                        AI Fitness <em>Intelligence.</em>
+                    </p>
+
+                    <p class="footer-desc">
+                        Turn every repetition into clear, understandable
+                        feedback on how you move.
+                    </p>
+
+                </div>
+
+
+                <!-- Explore -->
+                <nav class="footer-col" aria-label="Footer">
+
+                    <h4>Explore</h4>
+
+                    <a href="#analyzer">Analyzer</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="history.html">History</a>
+
+                </nav>
+
+
+                <!-- CTA -->
+                <div class="footer-col footer-cta">
+
+                    <h4>Get started</h4>
+
+                    <p>Upload a clip and see how you move.</p>
+
+                    <a href="#analyzer" class="footer-button">
+                        <span>Analyze My Form</span>
+                        <span class="footer-button-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+
+                <p class="footer-copy">© 2026 FormFit. All rights reserved.</p>
+
+                <a href="#" class="footer-top-link" aria-label="Back to top">
+                    Back to top
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 19V5M6 11l6-6 6 6" />
+                        </svg>
+                    </span>
+                </a>
+
+            </div>
+
+            <!-- Large faint wordmark -->
+            <div class="footer-wordmark" aria-hidden="true">FormFit</div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         APPLICATION SCRIPT
+    ========================================================== -->
+    <script type="module" src="nav-auth.js"></script>
+    <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>

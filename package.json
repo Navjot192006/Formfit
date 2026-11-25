@@ -1,0 +1,19 @@
+{
+  "name": "formfit-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI exercise form analyzer with a Node.js REST API and SQLite or PostgreSQL storage",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/app.cjs",
+    "create:teacher": "node --env-file-if-exists=.env server/create-teacher.cjs",
+    "migrate:postgres": "node --env-file-if-exists=.env server/migrate-sqlite-to-postgres.cjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}

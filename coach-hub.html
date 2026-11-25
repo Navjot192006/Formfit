@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Coach Hub Admin | FormFit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teacher.css">
+</head>
+
+<body data-page="teacher">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="barbell">
+                <div class="bb-end bb-end-left" aria-hidden="true"><span class="bb-tip"></span><span class="bb-plate bb-plate-teal"></span><span class="bb-plate bb-plate-red"></span></div>
+                <div class="bb-bar">
+                    <span class="bb-grip" aria-hidden="true"></span>
+                    <a href="index.html" class="brand" aria-label="FormFit home"><strong>FormFit</strong></a>
+                    <span class="bb-grip" aria-hidden="true"></span>
+                    <div class="nav-links">
+                        <a href="index.html#analyzer">Analyzer</a>
+                        <a href="history.html">History</a>
+                        <a href="insights.html">Insights</a>
+                    </div>
+                    <span class="bb-grip" aria-hidden="true"></span>
+                    <a href="index.html#analyzer" class="nav-cta"><span class="nav-cta-text">Analyze Form</span><span class="nav-cta-arrow">→</span></a>
+                    <button class="nav-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+                    <span class="bb-grip" aria-hidden="true"></span>
+                </div>
+                <div class="bb-end bb-end-right" aria-hidden="true"><span class="bb-tip"></span><span class="bb-plate bb-plate-teal"></span><span class="bb-plate bb-plate-red"></span></div>
+            </div>
+        </nav>
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true" inert>
+            <div class="mobile-nav-inner">
+                <div class="mobile-nav-links">
+                    <a href="index.html#analyzer"><span>Analyzer</span><span>→</span></a>
+                    <a href="history.html"><span>History</span><span>→</span></a>
+                    <a href="insights.html"><span>Insights</span><span>→</span></a>
+                </div>
+                <a href="index.html#analyzer" class="mobile-nav-cta">Analyze Form <span>→</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="teacher-page">
+        <section class="teacher-hero">
+            <p class="eyebrow"><span></span> TEACHER ADMIN VIEW</p>
+            <h1>Project data,<br><em>all in one place.</em></h1>
+            <p>Review and manage registered accounts alongside their saved workout analyses.</p>
+            <p class="teacher-privacy">You can edit account names and email addresses or remove accounts. Passwords, password hashes and session tokens are never shown.</p>
+        </section>
+
+        <p class="teacher-status" id="teacherStatus" role="status" aria-live="polite">Loading teacher data…</p>
+
+        <section class="teacher-content" id="teacherContent" hidden>
+            <div class="teacher-stats" aria-label="Database summary">
+                <article><span>Registered users</span><strong id="teacherUserCount">0</strong></article>
+                <article><span>Saved workouts</span><strong id="teacherWorkoutCount">0</strong></article>
+                <article><span>Repetitions recorded</span><strong id="teacherRepCount">0</strong></article>
+            </div>
+
+            <label class="teacher-search">Find a user
+                <input id="teacherSearch" type="search" autocomplete="off" placeholder="Search name or email">
+            </label>
+            <p class="teacher-action-status" id="teacherActionStatus" role="status" aria-live="polite"></p>
+            <div class="teacher-users" id="teacherUsers"></div>
+            <p class="teacher-no-results" id="teacherNoResults" hidden>No registered users match this search.</p>
+        </section>
+    </main>
+
+    <dialog class="teacher-dialog" id="teacherEditDialog" aria-labelledby="teacherEditTitle">
+        <form class="teacher-edit-form" id="teacherEditForm">
+            <p class="eyebrow"><span></span> ACCOUNT SETTINGS</p>
+            <h2 id="teacherEditTitle">Edit user profile</h2>
+            <input id="teacherEditId" name="userId" type="hidden">
+            <label for="teacherEditName">Full name</label>
+            <input id="teacherEditName" name="name" type="text" minlength="2" maxlength="60" required autocomplete="name">
+            <label for="teacherEditEmail">Email address</label>
+            <input id="teacherEditEmail" name="email" type="email" maxlength="254" required autocomplete="email">
+            <p class="teacher-edit-error" id="teacherEditError" role="alert" hidden></p>
+            <div class="teacher-dialog-actions">
+                <button class="teacher-action-button" id="teacherEditCancel" type="button">Cancel</button>
+                <button class="teacher-action-button teacher-action-primary" type="submit">Save changes</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script type="module" src="nav-auth.js"></script>
+    <script type="module" src="teacher.js"></script>
+</body>
+</html>
